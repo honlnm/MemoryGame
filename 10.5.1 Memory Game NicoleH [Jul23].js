@@ -60,13 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function createDivsForCats(catArray) {
         for (let cat of catArray) {
             const newDiv = document.createElement("div");
-
             newDiv.classList.add(cat.slice(0, cat.length - 1));
-
             newDiv.setAttribute('id', cat.slice(cat.length - 1, cat.length));
-
             newDiv.addEventListener("click", handleCardClick);
-
+            newDiv.style.backgroundImage = "url(paw-print.png)";
             gameContainer.append(newDiv);
         };
     };
@@ -76,14 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleCardClick(event) {
         let idProperty = event.target.id;
         let idClass = event.target.className;
-        console.log(idClass);
+        console.log(document.getElementById(idProperty).style.backgroundImage);
         for (let i = 0; i <= clickedStorage.length; i++) {
             if (event.target.style.backgroundImage !== 'url("paw-print.png")') {
                 alert("You've already clicked this card");
             } else {
                 clickedStorage.push(idProperty);
                 catStorage.push(idClass);
-                event.target.style.backgroundImage = 'url(' + idClass + ')';
+                event.target.style.backgroundImage = idClass;
             };
             if ((clickedStorage.length === 2) && (catStorage[catStorage.length - 2] === catStorage[catStorage.length - 1])) {
                 clickedStorage = [];
@@ -95,9 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                     location.reload();
                 };
-
                 break;
-
             } else if ((clickedStorage.length === 2) && (catStorage[catStorage.length - 2] !== catStorage[catStorage.length - 1])) {
                 addEventListener("click", extraCardClick, true);
                 function extraCardClick(event) {
