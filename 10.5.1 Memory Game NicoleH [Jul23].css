@@ -1,7 +1,116 @@
+@font-face {
+    font-family: "BubbleWorld";
+    src:
+        url(BubbleWorld-nRG50.ttf) format(TrueType);
+}
+
+@font-face {
+    font-family: "BubbleRainbow";
+    src:
+        url(BubbleRainbow-VGdn0.ttf) format(TrueType);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:not(h1) {
+    font-family: "BubbleRainbow", serif;
+    font-weight: bold;
+    color: rgb(33, 21, 0);
+}
+
+body {
+    background-color: orange;
+    display: grid;
+    grid-template: auto repeat(2, 1fr);
+}
+
+h1 {
+    color: rgb(33, 21, 0);
+    font-size: 10vh;
+    font-family: "BubbleWorld", serif;
+    text-align: center;
+    margin: 15px;
+}
+
+#gameInfo {
+    display: flex;
+    text-align: center;
+    flex-direction: column-reverse;
+}
+
+#gameInfo p {
+    margin-bottom: 0;
+}
+
+#startGame {
+    border-style: outset;
+}
+
+#startGame:hover,
+#restart:hover {
+    background-color: rgb(142, 4, 4);
+    color: white;
+}
+
+#startGame:active,
+#restart:active {
+    border-style: inset;
+    background-color: green;
+    color: white;
+    transform: translateY(4px);
+}
+
+#restart {
+    border-style: outset;
+}
+
+#game {
+    display: grid;
+    grid-auto-flow: row dense;
+}
+
+@media (min-width: 500px) {
+    #game {
+        grid-template: repeat(5, 1fr) / repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 625px) {
+    #game {
+        grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 750px) {
+    #game {
+        grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    #game {
+        grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+    }
+}
+
 #game div {
-    border: 1px solid black;
-    width: 15%;
-    height: 200px;
+    border: 1px solid whitesmoke;
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
     margin: 10px;
-    display: inline-block;
+    background-color: whitesmoke;
+    border-style: outset;
+    border-width: 3px;
+    background-image: url("paw-print.png");
+    background-size: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#game div:hover {
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, .8);
+    transform: translateY(-4px);
 }

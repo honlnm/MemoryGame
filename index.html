@@ -3,25 +3,26 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Memory Game!</title>
+    <title>Cat Memory Game!</title>
     <link rel="stylesheet" href="10.5.1 Memory Game NicoleH [Jul23].css" />
 </head>
 
 <body>
-    <h1>Memory Game!</h1>
-    <p>
-        <span>Current Time: </span>
-        <span id="currentTime"></span>
-    </p>
-    <p>
-        <span>Lowest Time: </span>
-        <span id="lowestTime"></span>
-    </p>
-    <span>
-        <button action="" id="startGame">START NEW GAME</button>
-        <button action="" id="restart">RESTART CURRENT GAME</button>
-    </span>
-
+    <h1>Cat Memory Game!</h1>
+    <div id="gameInfo">
+        <p id="currentTimeContainter">
+            <span>Current Time: </span>
+            <span id="currentTime"></span>
+        </p>
+        <p id="lowestTimeContainer">
+            <span>Lowest Time: </span>
+            <span id="lowestTime"></span>
+        </p>
+        <span id="buttonsContainer">
+            <button action="" id="startGame">START NEW GAME</button>
+            <button action="" id="restart">RESTART CURRENT GAME</button>
+        </span>
+    </div>
     <div id="game">
     </div>
     <script src="10.5.1 Memory Game NicoleH [Jul23].js"></script>
